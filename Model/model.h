@@ -3,13 +3,14 @@
 
 #include "Robot/robot.h"
 #include <vector>
+
 class Model
 {
 public:
     Model();
     ~Model();
 public:
-    std::vector<Robot> _robots;
+    std::vector<Robot*> _robots;
 };
 
 #endif // MODEL_H

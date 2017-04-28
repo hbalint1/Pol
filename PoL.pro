@@ -27,11 +27,13 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     Robot/robot.cpp \
     drawablearea.cpp \
-    Model/model.cpp
+    Model/model.cpp \
+    Robot/robotsim.cpp
 
 HEADERS  += mainwindow.h \
     Robot/robot.h \
     drawablearea.h \
-    Model/model.h
+    Model/model.h \
+    Robot/robotsim.h
 
 FORMS    += mainwindow.ui
