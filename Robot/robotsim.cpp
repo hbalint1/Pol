@@ -1,6 +1,6 @@
 #include "robotsim.h"
 
-RobotSIM::RobotSIM(int x, int y, std::vector<std::string> lights) : Robot(x, y, lights)
+RobotSIM::RobotSIM(Point pos, std::vector<std::string> lights) : Robot(pos, lights)
 {
 
 }

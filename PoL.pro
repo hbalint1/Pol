@@ -28,12 +28,17 @@ SOURCES += main.cpp\
     Robot/robot.cpp \
     drawablearea.cpp \
     Model/model.cpp \
-    Robot/robotsim.cpp
+    Robot/robotsim.cpp \
+    Protocol/protocol.cpp \
+    Utils/utils.cpp \
+    Protocol/protocolsim.cpp
 
 HEADERS  += mainwindow.h \
     Robot/robot.h \
     drawablearea.h \
     Model/model.h \
-    Robot/robotsim.h
+    Robot/robotsim.h \
+    Protocol/protocol.h \
+    Protocol/protocolsim.h
 
 FORMS    += mainwindow.ui

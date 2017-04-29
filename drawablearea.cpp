@@ -19,7 +19,7 @@ void DrawableArea::paintEvent(QPaintEvent *e)
     p.setBrush(Qt::red);
 
     // Drawing robots on screen
-    foreach (Robot* robot, _model->_robots) {
-        p.drawRect(robot->x(), robot->y(), 5, 5);
+    foreach (Robot* robot, _model->protocol()->robots()) {
+        p.drawRect(robot->getPos().x, robot->getPos().y, 5, 5);
     }
 }

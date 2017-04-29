@@ -1,22 +1,25 @@
 #include "model.h"
-#include <random>
-#include <Robot/robotsim.h>
-#include <time.h>
+
+#include <Protocol/protocolsim.h>
 
 Model::Model()
 {
-    srand(time(NULL));
-
-    std::vector<std::string> lights ({"T", "M", "S", "F", "W", "N"});
-
-    _robots = std::vector<Robot*>();
-    for(int i=0; i<3; i++)
-    {
-        _robots.push_back(new RobotSIM(rand()%100, rand()%100, lights));
-    }
+    //debug alatt SIM a modell... később kivenni
+    setProtocol(new ProtocolSIM());
+    _protocol->addRobots(5);
 }
 
 Model::~Model()
 {
-    delete(&_robots);
+    delete(_protocol);
+}
+
+Protocol *Model::protocol() const
+{
+    return _protocol;
+}
+
+void Model::setProtocol(Protocol *protocol)
+{
+    _protocol = protocol;
 }

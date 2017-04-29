@@ -6,7 +6,7 @@
 class RobotSIM : public Robot
 {
 public:
-    RobotSIM(int x, int y, std::vector<std::string> lights);
+    RobotSIM(Point pos, std::vector<std::string> lights);
 
     // Robot interface
 private:
