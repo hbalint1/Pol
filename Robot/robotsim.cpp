@@ -1,6 +1,7 @@
 #include "robotsim.h"
 
-RobotSIM::RobotSIM(Point pos, std::vector<std::string> lights) : Robot(pos, lights)
+RobotSIM::RobotSIM(Point pos, std::vector<std::string> lights, std::vector<Robot *> *robots) :
+    Robot(pos, lights, robots)
 {
 
 }
@@ -10,12 +11,12 @@ void RobotSIM::Look()
 
 }
 
-void RobotSIM::Compute()
+Point RobotSIM::Compute()
 {
-
+    return Point();
 }
 
-void RobotSIM::Move()
+void RobotSIM::Move(const Point &p)
 {
 
 }

@@ -13,7 +13,7 @@ public:
 
     Protocol *protocol() const;
     void setProtocol(Protocol *protocol);
-    enum Protocols { SIM = 0 };
+    enum Protocols { SIM = 0, TwoGatherLight };
 
 private:
     Protocol* _protocol;

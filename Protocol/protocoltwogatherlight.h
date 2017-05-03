@@ -1,13 +1,13 @@
-#ifndef PROTOCOLSIM_H
-#define PROTOCOLSIM_H
+#ifndef PROTOCOLTWOGATHERLIGHT_H
+#define PROTOCOLTWOGATHERLIGHT_H
 
 #include "protocol.h"
 
 
-class ProtocolSIM : public Protocol
+class ProtocolTwoGatherLight : public Protocol
 {
 public:
-    ProtocolSIM();
+    ProtocolTwoGatherLight();
 
     // Protocol interface
 public:
@@ -18,4 +18,4 @@ private:
     void setLights() override;
 };
 
-#endif // PROTOCOLSIM_H
+#endif // PROTOCOLTWOGATHERLIGHT_H

@@ -16,7 +16,7 @@ void ProtocolSIM::setLights()
 
 void ProtocolSIM::addRobot(const Point pos)
 {
-    _robots.push_back(new RobotSIM(pos, _lights));
+    _robots.push_back(new RobotSIM(pos, _lights, &_robots));
 }
 
 void ProtocolSIM::addRobots(const int robotCount)

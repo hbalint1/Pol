@@ -31,7 +31,9 @@ SOURCES += main.cpp\
     Robot/robotsim.cpp \
     Protocol/protocol.cpp \
     Utils/utils.cpp \
-    Protocol/protocolsim.cpp
+    Protocol/protocolsim.cpp \
+    Protocol/protocoltwogatherlight.cpp \
+    Robot/robottwogatherlight.cpp
 
 HEADERS  += mainwindow.h \
     Robot/robot.h \
@@ -39,6 +41,8 @@ HEADERS  += mainwindow.h \
     Model/model.h \
     Robot/robotsim.h \
     Protocol/protocol.h \
-    Protocol/protocolsim.h
+    Protocol/protocolsim.h \
+    Protocol/protocoltwogatherlight.h \
+    Robot/robottwogatherlight.h
 
 FORMS    += mainwindow.ui

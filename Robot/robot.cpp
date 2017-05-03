@@ -1,17 +1,18 @@
 #include "robot.h"
 
-Robot::Robot(Point pos, std::vector<std::string> lights) : _pos(pos), _lights(lights)
+Robot::Robot(Point pos, std::vector<std::string> lights, std::vector<Robot *> *robots) :
+    _pos(pos), _lights(lights), _robots(robots)
 {
 }
 
 void Robot::LCM()
 {
     Look();
-    Compute();
-    Move();
+    Point p = Compute();
+    Move(p);
 }
 
-std::string Robot::light() const
+std::string Robot::getLight() const
 {
     return _light;
 }
@@ -19,6 +20,19 @@ std::string Robot::light() const
 Point Robot::getPos() const
 {
     return _pos;
+}
+
+void Robot::TakeSnapshot()
+{
+    std::vector<Point> positions;
+    std::vector<std::string> lights;
+    for (const auto& robot: *_robots)
+    {
+        positions.push_back(robot->getPos());
+        lights.push_back(robot->getLight());
+    }
+    Snapshot s(positions, lights);
+    _snapshots.push_back(s);
 }
 
 Robot::~Robot()

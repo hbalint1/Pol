@@ -1,12 +1,13 @@
 #include "model.h"
 
 #include <Protocol/protocolsim.h>
+#include <Protocol/protocoltwogatherlight.h>
 
 Model::Model()
 {
-    //debug alatt SIM a modell... később kivenni
-    setProtocol(new ProtocolSIM());
-    _protocol->addRobots(5);
+    //debug alatt TwoGatherLight a modell... később kivenni
+    setProtocol(new ProtocolTwoGatherLight());
+    _protocol->addRobots(2);
 }
 
 Model::~Model()
