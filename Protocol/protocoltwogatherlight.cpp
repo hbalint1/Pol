@@ -18,7 +18,7 @@ void ProtocolTwoGatherLight::addRobots(const int robotCount)
     srand(time(NULL));
     for(int i=0; i<robotCount; i++)
     {
-        addRobot(Point(rand()%100, rand()%100));
+        addRobot(Point(rand()%200, rand()%200));
     }
 }
 

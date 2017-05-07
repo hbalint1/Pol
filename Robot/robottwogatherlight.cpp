@@ -29,6 +29,8 @@ void RobotTwoGatherLight::Look()
 
 Point RobotTwoGatherLight::Compute()
 {
+    // if Gather then STOP
+
     Point p = getPos();
 
     Snapshot other = _snapshots[0];
@@ -60,14 +62,27 @@ Point RobotTwoGatherLight::Compute()
         }
     }
 
+    emit lightChanged();
+//    std::cout << "emitted lightChanged" << std::endl;
+
     return p;
 }
 
 void RobotTwoGatherLight::Move(const Point &p)
 {
-    std::cout << p.x << " " << p.y << std::endl;
+    std::cout << "target" << p;
 
+    Point newPos = p - _pos;
 
+    std::cout << "newPos" << newPos;
+    std::cout << "length: " << newPos.length() << std::endl;
+    newPos.normalize();
+    std::cout << "normalize" << newPos << std::endl;
+
+    _pos = newPos;
+
+    emit positionChanged();
+//    std::cout << "emitted positionChanged" << std::endl;
 
     // After move he deletes snapshot, becasue it's an oblivious robot.
     _snapshots.clear();

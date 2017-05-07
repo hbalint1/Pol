@@ -13,6 +13,8 @@ public:
     DrawableArea(Model* model);
     void paintEvent(QPaintEvent *e);
     Model* _model;
+private slots:
+    void timeOut();
 };
 
 #endif // DRAWABLEAREA_H

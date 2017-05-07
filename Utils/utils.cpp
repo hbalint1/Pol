@@ -1,5 +1,7 @@
 #include <vector>
 #include <string>
+#include <iostream>
+#include <math.h>
 
 struct Point {
     int x;
@@ -13,7 +15,7 @@ struct Point {
         return (other.x == x && other.y == y);
     }
 
-    Point operator-(const Point& other) {
+    Point operator-(const Point& other) const {
         return Point(x - other.x,y - other.y);
     }
 
@@ -23,7 +25,23 @@ struct Point {
         ret.y = (a.y + b.y) / 2;
         return ret;
     }
+
+    double length() {
+        return sqrt(pow(x,2) + pow(y,2));
+    }
+
+    void normalize() {
+        if(length()!= 0) {
+            x = x/length();
+            y = y/length();
+        }
+    }
 };
+
+inline std::ostream& operator<<(std::ostream& os, const Point& p) {
+    os << "(" << p.x << "," << p.y << ")" << std::endl;
+    return os;
+}
 
 struct Snapshot {
     std::vector<Point> Pos;
