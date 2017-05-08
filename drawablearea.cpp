@@ -14,7 +14,7 @@ DrawableArea::DrawableArea(Model* model)
     // Setting a repeating timer that calls LCM on each robot.
     QTimer *timer = new QTimer(this);
     QObject::connect(timer, SIGNAL(timeout()), this, SLOT(timeOut()));
-    timer->start(1000);
+    timer->start(50);
 
     foreach (Robot* robot, _model->protocol()->robots()) {
         QObject::connect(robot, SIGNAL(lightChanged()), this, SLOT(update()));

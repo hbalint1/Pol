@@ -11,8 +11,9 @@ RobotTwoGatherLight::RobotTwoGatherLight(Point pos, std::vector<std::string> lig
 void RobotTwoGatherLight::Look()
 {
     TakeSnapshot();
+//    for (Snapshot const &s: _snapshots) std::cout << s;
     // Take out self from the snapshot.
-    for (Snapshot s: _snapshots)
+    for (Snapshot &s: _snapshots)
     {
         int index = 0;
         for(int i = 0; i < s.Pos.size(); i++)
@@ -25,6 +26,7 @@ void RobotTwoGatherLight::Look()
         }
         s.Light.erase(s.Light.begin() + index);
     }
+//    for (Snapshot const &s: _snapshots) std::cout << s;
 }
 
 Point RobotTwoGatherLight::Compute()
@@ -71,13 +73,18 @@ Point RobotTwoGatherLight::Compute()
 void RobotTwoGatherLight::Move(const Point &p)
 {
     std::cout << "target" << p;
+    std::cout << "current pos" << _pos;
 
     Point newPos = p - _pos;
 
     std::cout << "newPos" << newPos;
     std::cout << "length: " << newPos.length() << std::endl;
+    // Normalizing vector two get only direction of movement
     newPos.normalize();
+    // Give some speed to move 5 pixel/move
+    newPos = newPos * 1;
     std::cout << "normalize" << newPos << std::endl;
+    newPos = _pos + newPos;
 
     _pos = newPos;
 
