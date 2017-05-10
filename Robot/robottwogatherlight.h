@@ -13,6 +13,8 @@ private:
     void Look() override;
     Point Compute() override;
     void Move(const Point& p) override;
+
+    bool Gather() const;
 };
 
 #endif // ROBOTTWOGATHERLIGHT_H

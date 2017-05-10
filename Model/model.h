@@ -8,7 +8,7 @@
 class Model
 {
 public:
-    Model();
+    Model(int width, int height);
     ~Model();
 
     Protocol *protocol() const;

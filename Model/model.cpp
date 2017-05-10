@@ -3,15 +3,16 @@
 #include <Protocol/protocolsim.h>
 #include <Protocol/protocoltwogatherlight.h>
 
-Model::Model()
+Model::Model(int width, int height)
 {
     //debug alatt TwoGatherLight a modell... később kivenni
-    setProtocol(new ProtocolTwoGatherLight());
+    setProtocol(new ProtocolTwoGatherLight(width, height));
     _protocol->addRobots(2);
 }
 
 Model::~Model()
 {
+    _protocol = 0;
     delete(_protocol);
 }
 

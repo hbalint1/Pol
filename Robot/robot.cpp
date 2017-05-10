@@ -1,7 +1,7 @@
 #include "robot.h"
 
 Robot::Robot(Point pos, std::vector<std::string> lights, std::vector<Robot *> *robots) :
-    _pos(pos), _lights(lights), _robots(robots)
+    _pos(pos), _lights(lights), _robots(robots), _size(25)
 {
 }
 
@@ -37,5 +37,6 @@ void Robot::TakeSnapshot()
 
 Robot::~Robot()
 {
-    delete(&_snapshots);
+    _robots = 0;
+    delete(_robots);
 }

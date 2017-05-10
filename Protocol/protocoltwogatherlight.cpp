@@ -3,9 +3,11 @@
 #include <random>
 #include <time.h>
 
-ProtocolTwoGatherLight::ProtocolTwoGatherLight() : Protocol(4, 0)
+ProtocolTwoGatherLight::ProtocolTwoGatherLight(int width, int height) : Protocol(4, 0)
 {
     setLights();
+    _width = width;
+    _height = height;
 }
 
 void ProtocolTwoGatherLight::addRobot(const Point pos)
@@ -18,7 +20,8 @@ void ProtocolTwoGatherLight::addRobots(const int robotCount)
     srand(time(NULL));
     for(int i=0; i<robotCount; i++)
     {
-        addRobot(Point(rand()%100, rand()%100));
+        addRobot(Point(rand() % _width, rand() % _height));
+        std::cout << _width << " " << _height << std::endl;
     }
 }
 
