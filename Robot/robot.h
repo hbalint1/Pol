@@ -17,7 +17,7 @@ public:
 
     std::string getLight() const;
     Point getPos() const;
-
+    int _size;
 signals:
     void lightChanged();
     void positionChanged();

@@ -32,6 +32,7 @@ void RobotTwoGatherLight::Look()
 Point RobotTwoGatherLight::Compute()
 {
     // if Gather then STOP
+    if(Gather()) return _pos;
 
     Point p = getPos();
 
@@ -93,4 +94,10 @@ void RobotTwoGatherLight::Move(const Point &p)
 
     // After move he deletes snapshot, becasue it's an oblivious robot.
     _snapshots.clear();
+}
+
+bool RobotTwoGatherLight::Gather() const
+{
+    if(Point::distance(_pos, _snapshots[0].Pos[0]) <= _size) return true;
+    else return false;
 }

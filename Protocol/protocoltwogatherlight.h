@@ -7,7 +7,7 @@
 class ProtocolTwoGatherLight : public Protocol
 {
 public:
-    ProtocolTwoGatherLight();
+    ProtocolTwoGatherLight(int width, int height);
 
     // Protocol interface
 public:
@@ -16,6 +16,9 @@ public:
 
 private:
     void setLights() override;
+
+    int _width;
+    int _height;
 };
 
 #endif // PROTOCOLTWOGATHERLIGHT_H

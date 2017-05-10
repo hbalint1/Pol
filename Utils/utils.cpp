@@ -34,14 +34,22 @@ struct Point {
         return ret;
     }
 
+    static double distance(const Point& a, const Point& b) {
+        return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2));
+    }
+
     double length() {
         return sqrt(pow(x,2) + pow(y,2));
     }
 
     void normalize() {
         if(length()!= 0) {
-            x = x/length();
-            y = y/length();
+            double t = x/length();
+            if(t > 0) x = ceil(t);
+            else x = floor(t);
+            t = y/length();
+            if(t > 0) y = ceil(t);
+            else y = floor(t);
         }
     }
 
